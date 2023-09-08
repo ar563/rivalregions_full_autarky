@@ -28,17 +28,14 @@ const allStates = document.getElementsByTagName("tr");
 const states = Array.from(allStates)
   .map((element) => element.getAttribute("user"))
   .filter((user) => user);
+const delayBetweenRequests = 2000;
 
-function forEachWithDelay(array, delay) {
-  array.forEach((item, index) => {
-    setTimeout(() => {
-      fetch(`https://rivalregions.com/map/set_import/${item}`, {
-        method: "POST",
-        headers: myHeaders,
-        body: formData,
-      });
-    }, index * delay); // Multiply by the index to introduce a delay
-  });
-}
-
-forEachWithDelay(states, 2000);
+states.forEach((state, index) => {
+  setTimeout(() => {
+    fetch(`https://rivalregions.com/map/set_import/${state}`, {
+      method: "POST",
+      headers: myHeaders,
+      body: formData,
+    });
+  }, index * delay); // Multiply by the index to introduce a delay
+});
