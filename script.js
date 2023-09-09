@@ -37,5 +37,5 @@ states.forEach((state, index) => {
       headers: myHeaders,
       body: formData,
     });
-  }, index * delay); // Multiply by the index to introduce a delay
+  }, index * delayBetweenRequests); // Multiply by the index to introduce a delay
 });
