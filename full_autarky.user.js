@@ -8,16 +8,12 @@
 (function () {
 
 
-  document.addEventListener("DOMContentLoaded", function() {
 const startButton = document.createElement("button");
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
 
-  const headerSlideInner = document.getElementById("news_menu");
-        if (headerSlideInner) {
-            headerSlideInner.appendChild(startButton);
-        }
-});
+  const margin = document.getElementsByClassName("margin")
+            margin.appendChild(startButton);
 
   const myHeaders = new Headers({
     Host: "rivalregions.com",
