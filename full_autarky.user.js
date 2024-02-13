@@ -49,7 +49,7 @@
     const states = Array.from(allStates)
       .map((element) => element.getAttribute("user"))
       .filter((user) => user);
-    const delayBetweenRequests = 5000;
+    const delayBetweenRequests = 4000;
 
     states.forEach((state, index) => {
       setTimeout(() => {
@@ -58,10 +58,9 @@
           headers: myHeaders,
           body: formData,
         });
+        if (states.length - 1 === index)
+          alert("Embargo stopped! You can close RR page now");
       }, index * delayBetweenRequests);
-
-      if (states.length - 1 === index)
-        alert("Embargo stopped! You can close RR page now");
     });
   };
 
