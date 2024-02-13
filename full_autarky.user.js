@@ -36,7 +36,9 @@
   });
 
   const formData = new FormData();
-  formData.append("post", "post");
+
+  const handleClick = () => {
+    formData.append("post", "post");
   formData.append("c", "8f41df336a7bc6af3851ab8ecd6f158b");
 
   const allStates = document.getElementsByTagName("tr");
@@ -54,4 +56,5 @@
       });
     }, index * delayBetweenRequests); // Multiply by the index to introduce a delay
   });
+  }
 })();
