@@ -41,6 +41,7 @@
   const formData = new FormData();
 
   const handleClick = () => {
+    alert("Embargo started! dont close RR page");
     formData.append("post", "post");
     formData.append("c", "8f41df336a7bc6af3851ab8ecd6f158b");
 
@@ -57,7 +58,10 @@
           headers: myHeaders,
           body: formData,
         });
-      }, index * delayBetweenRequests); // Multiply by the index to introduce a delay
+      }, index * delayBetweenRequests);
+
+      if (states.length - 1 === index)
+        alert("Embargo stopped! You can close RR page now");
     });
   };
 
