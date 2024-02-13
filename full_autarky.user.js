@@ -7,8 +7,9 @@
 
 (function () {
 
-  function appendButton() {
-        const startButton = document.createElement("button");
+
+  document.addEventListener("DOMContentLoaded", function() {
+const startButton = document.createElement("button");
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
 
@@ -16,9 +17,7 @@
         if (headerSlideInner) {
             headerSlideInner.appendChild(startButton);
         }
-    }
-
-      window.addEventListener("load", appendButton);
+});
 
   const myHeaders = new Headers({
     Host: "rivalregions.com",
