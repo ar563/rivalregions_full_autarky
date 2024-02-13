@@ -12,8 +12,7 @@ const startButton = document.createElement("button");
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
 
-  const header_buttons_hover_close = document.getElementsByClassName("header_buttons_hover_close")
-            header_buttons_hover_close.appendChild(startButton);
+  document.body.appendChild(startButton);
 
   const myHeaders = new Headers({
     Host: "rivalregions.com",
