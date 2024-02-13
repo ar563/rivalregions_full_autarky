@@ -12,7 +12,7 @@
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
 
-  const headerSlideInner = document.getElementById("slide_close");
+  const headerSlideInner = document.body.getElementById("header_slide_inner");
         if (headerSlideInner) {
             headerSlideInner.appendChild(startButton);
         }
