@@ -2,6 +2,7 @@
 // @name Rival Regions Full Autarky Script
 // @description Automatically imports data for Rival Regions states
 // @include https://rivalregions.com/#listed/states
+// @connect self
 // ==/UserScript==
 
 (function () {
