@@ -6,12 +6,19 @@
 // ==/UserScript==
 
 (function () {
-  const startButton = document.createElement("button");
+
+  function appendButton() {
+        const startButton = document.createElement("button");
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
 
   const headerSlideInner = document.getElementById("header_slide_inner");
-  headerSlideInner.appendChild(startButton);
+        if (headerSlideInner) {
+            headerSlideInner.appendChild(startButton);
+        }
+    }
+
+      window.addEventListener("load", appendButton);
 
   const myHeaders = new Headers({
     Host: "rivalregions.com",
@@ -57,4 +64,5 @@
     }, index * delayBetweenRequests); // Multiply by the index to introduce a delay
   });
   }
+  
 })();
