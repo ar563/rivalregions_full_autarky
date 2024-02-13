@@ -13,7 +13,7 @@ const startButton = document.createElement("button");
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
 
-  const headerSlideInner = document.body.getElementById("news_menu");
+  const headerSlideInner = document.getElementById("news_menu");
         if (headerSlideInner) {
             headerSlideInner.appendChild(startButton);
         }
