@@ -10,8 +10,8 @@
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
 
-  // Append the button to the desired location (e.g., body)
-  document.body.appendChild(startButton);
+  const headerSlideInner = document.getElementById("header_slide_inner");
+  headerSlideInner.appendChild(startButton);
 
   const myHeaders = new Headers({
     Host: "rivalregions.com",
