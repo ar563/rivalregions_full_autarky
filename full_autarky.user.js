@@ -6,11 +6,13 @@
 // ==/UserScript==
 
 (function () {
-
-
-const startButton = document.createElement("button");
+  const startButton = document.createElement("button");
   startButton.textContent = "start embargo";
   startButton.id = "startButton";
+  startButton.style.position = "fixed";
+  startButton.style.bottom = "10px";
+  startButton.style.left = "10px";
+  startButton.style.zIndex = "9999";
 
   document.body.appendChild(startButton);
 
@@ -40,23 +42,24 @@ const startButton = document.createElement("button");
 
   const handleClick = () => {
     formData.append("post", "post");
-  formData.append("c", "8f41df336a7bc6af3851ab8ecd6f158b");
+    formData.append("c", "8f41df336a7bc6af3851ab8ecd6f158b");
 
-  const allStates = document.getElementsByTagName("tr");
-  const states = Array.from(allStates)
-    .map((element) => element.getAttribute("user"))
-    .filter((user) => user);
-  const delayBetweenRequests = 2000;
+    const allStates = document.getElementsByTagName("tr");
+    const states = Array.from(allStates)
+      .map((element) => element.getAttribute("user"))
+      .filter((user) => user);
+    const delayBetweenRequests = 5000;
 
-  states.forEach((state, index) => {
-    setTimeout(() => {
-      fetch(`https://rivalregions.com/map/set_import/${state}`, {
-        method: "POST",
-        headers: myHeaders,
-        body: formData,
-      });
-    }, index * delayBetweenRequests); // Multiply by the index to introduce a delay
-  });
-  }
-  
+    states.forEach((state, index) => {
+      setTimeout(() => {
+        fetch(`https://rivalregions.com/map/set_import/${state}`, {
+          method: "POST",
+          headers: myHeaders,
+          body: formData,
+        });
+      }, index * delayBetweenRequests); // Multiply by the index to introduce a delay
+    });
+  };
+
+  startButton.addEventListener("click", handleClick);
 })();
