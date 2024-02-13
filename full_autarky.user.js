@@ -17,7 +17,7 @@ const myHeaders = new Headers({
   "Accept-Encoding": "gzip, deflate, br",
   "Accept-Language": "en-US,en;q=0.5",
   Connection: "keep-alive",
-  Cookie: "real_cookie", // replace with real cookie
+  Cookie: document.cookie, // replace with real cookie
 });
 
 const formData = new FormData();
