@@ -57,9 +57,10 @@
           method: "POST",
           headers: myHeaders,
           body: formData,
-        });
-        if (states.length - 1 === index)
-          alert("Embargo stopped! You can close RR page now");
+        }).then(
+          states.length - 1 === index &&
+            alert("Embargo stopped! You can close RR page now"),
+        );
       }, index * delayBetweenRequests);
     });
   };
